@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f7f2ea;
+  --foreground: #3a2f26;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utility for the small tracked-out capital labels used throughout */
+@layer components {
+  .eyebrow {
+    @apply text-[0.7rem] font-sans uppercase tracking-widest2 text-gold;
+  }
+}
