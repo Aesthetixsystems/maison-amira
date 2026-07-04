@@ -17,15 +17,20 @@ export type Product = {
   image: string;          // photo URL, or "" for a placeholder
   category?: string;
   badge?: string;         // e.g. "New", "Bestseller"
+  objectPosition?: string; // optional CSS object-position to frame the photo
 };
 
+// NOTE: the four cards below reuse the campaign shoot (/hero.jpg), framed on a
+// different look via `objectPosition`, so the demo stays on-brand. Swap each
+// `image` for your real product photo (and drop the objectPosition) as you add
+// the catalog.
 export const products: Product[] = [
   {
     id: "embellished-kaftan",
     name: "Embellished Kaftan",
     price: 49.99,
-    image:
-      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&q=80",
+    image: "/hero.jpg",
+    objectPosition: "22% 18%",
     category: "Kaftans",
     badge: "New",
   },
@@ -33,45 +38,37 @@ export const products: Product[] = [
     id: "gold-foil-open-abaya",
     name: "Gold Foil Open Abaya",
     price: 52.99,
-    image:
-      "https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=800&q=80",
+    image: "/hero.jpg",
+    objectPosition: "76% 18%",
     category: "Abayas",
   },
   {
     id: "floral-embroidered-abaya",
     name: "Floral Embroidered Abaya",
     price: 48.99,
-    image:
-      "https://images.unsplash.com/photo-1618244972963-dbee1a7edc95?auto=format&fit=crop&w=800&q=80",
+    image: "/hero.jpg",
+    objectPosition: "48% 16%",
     category: "Abayas",
   },
   {
     id: "luxe-embellished-abaya",
     name: "Luxe Embellished Abaya",
     price: 54.99,
-    image:
-      "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80",
+    image: "/hero.jpg",
+    objectPosition: "62% 20%",
     category: "Abayas",
     badge: "Bestseller",
   },
 ];
 
-export const categories: { name: string; image: string }[] = [
-  {
-    name: "Abayas",
-    image:
-      "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    name: "Kaftans",
-    image:
-      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    name: "Evening Wear",
-    image:
-      "https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=400&q=80",
-  },
+export const categories: {
+  name: string;
+  image: string;
+  objectPosition?: string;
+}[] = [
+  { name: "Abayas", image: "/hero.jpg", objectPosition: "48% 24%" },
+  { name: "Kaftans", image: "/hero.jpg", objectPosition: "22% 24%" },
+  { name: "Evening Wear", image: "/hero.jpg", objectPosition: "76% 24%" },
   {
     name: "Sets",
     image:

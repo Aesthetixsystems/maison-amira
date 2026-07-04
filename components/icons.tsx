@@ -47,6 +47,15 @@ export function BagIcon({ className }: IconProps) {
   );
 }
 
+export function UserIcon({ className }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
+      <circle cx="12" cy="8" r="3.4" stroke="currentColor" strokeWidth="1.4" />
+      <path d="M5 20c0-3.6 3.1-5.5 7-5.5s7 1.9 7 5.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function TruckIcon({ className }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>

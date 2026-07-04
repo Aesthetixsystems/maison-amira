@@ -7,20 +7,25 @@ const badges = [
   { Icon: ShieldIcon, title: "Secure Payments", text: "100% protected" },
 ];
 
+// Docked cream bar sitting at the bottom of the hero (as in the mockup).
 export default function TrustBadges() {
   return (
-    <section className="border-y border-beige bg-sand py-12">
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-4 sm:px-6 md:grid-cols-4">
+    <div className="relative z-10 mt-auto bg-cream/95 backdrop-blur">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-6 px-6 py-6 sm:px-10 md:grid-cols-4">
         {badges.map(({ Icon, title, text }) => (
-          <div key={title} className="flex flex-col items-center text-center">
-            <Icon className="h-8 w-8 text-tan" />
-            <h4 className="mt-3 font-sans text-[0.7rem] uppercase tracking-widest2 text-cocoa">
-              {title}
-            </h4>
-            <p className="mt-1 font-sans text-xs font-light text-mocha">{text}</p>
+          <div key={title} className="flex items-center gap-3.5">
+            <Icon className="h-8 w-8 shrink-0 text-tan" />
+            <div>
+              <h4 className="font-sans text-[0.7rem] uppercase tracking-widest text-cocoa">
+                {title}
+              </h4>
+              <p className="mt-0.5 font-sans text-xs font-light text-mocha">
+                {text}
+              </p>
+            </div>
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 }

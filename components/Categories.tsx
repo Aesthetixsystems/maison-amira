@@ -22,6 +22,7 @@ export default function Categories() {
                     alt={category.name}
                     fill
                     sizes="112px"
+                    style={{ objectPosition: category.objectPosition }}
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
