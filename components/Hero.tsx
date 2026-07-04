@@ -4,14 +4,23 @@ import TrustBadges from "./TrustBadges";
 export default function Hero() {
   return (
     <section className="relative flex min-h-[calc(100svh-6.5rem)] flex-col overflow-hidden lg:min-h-[calc(100svh-8.5rem)]">
-      {/* Campaign image — replace /public/hero.jpg to swap the banner */}
+      {/* Mobile portrait banner — replace /public/hero-mobile.jpg to swap it */}
+      <Image
+        src="/hero-mobile.jpg"
+        alt="Three women in embellished modest dresses"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-top sm:hidden"
+      />
+      {/* Desktop landscape banner — replace /public/hero.jpg to swap it */}
       <Image
         src="/hero.jpg"
         alt="Three women in embellished modest dresses"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[62%_top] sm:object-[center_top]"
+        className="hidden object-cover object-[center_top] sm:block"
       />
 
       {/* Editorial scrim: rich warm shadow on the left for the copy,
