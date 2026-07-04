@@ -13,7 +13,7 @@ const navLinks = ["New In", "Abayas", "Kaftans", "Sets", "Evening Wear"];
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-beige bg-white/95 backdrop-blur">
-      <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-4 py-4 text-cocoa sm:px-8">
+      <div className="grid w-full grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 py-4 text-cocoa sm:px-12 lg:px-20">
         {/* Left — hamburger (mobile) / nav links (desktop), pinned hard-left */}
         <div className="flex items-center justify-self-start">
           <button
