@@ -1,10 +1,9 @@
 import Image from "next/image";
-import Header from "./Header";
 import TrustBadges from "./TrustBadges";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[calc(100svh-2.5rem)] flex-col overflow-hidden">
+    <section className="relative flex min-h-[calc(100svh-6.5rem)] flex-col overflow-hidden">
       {/* Campaign image — replace /public/hero.jpg to swap the banner */}
       <Image
         src="/hero.jpg"
@@ -12,34 +11,33 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[62%_center] sm:object-center"
+        className="object-cover object-[68%_center] sm:object-[60%_center] lg:object-center"
       />
 
-      {/* Warm cream wash over the top-left so the nav + copy stay readable
-          while the airy, light feel of the photo shows through on the right */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cream/90 via-cream/35 to-transparent" />
-
-      {/* Overlaid navigation */}
-      <Header overlay />
+      {/* Editorial scrim: rich warm shadow on the left for the copy,
+          fading to reveal the models on the right. Keeps text legible. */}
+      <div className="absolute inset-0 bg-gradient-to-r from-espresso/85 via-espresso/45 to-transparent sm:via-espresso/25" />
+      <div className="absolute inset-0 bg-gradient-to-t from-espresso/40 via-transparent to-transparent sm:from-espresso/20" />
 
       {/* Hero copy */}
       <div className="relative z-10 flex flex-1 items-center">
         <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
-          <div className="max-w-lg text-cocoa">
-            <p className="text-[0.72rem] font-sans uppercase tracking-widest2 text-tan">
+          <div className="max-w-xl">
+            <p className="text-[0.72rem] font-sans uppercase tracking-widest2 text-goldsoft">
               New Collection
             </p>
-            <h1 className="mt-5 font-serif text-5xl font-semibold leading-[1.05] text-espresso sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 font-serif text-5xl font-medium leading-[1.02] text-cream drop-shadow-sm sm:text-6xl lg:text-7xl">
               Timeless elegance.
               <br />
-              Made for every beautiful moment.
+              Made for every
+              <br className="hidden sm:block" /> beautiful moment.
             </h1>
-            <p className="mt-5 max-w-sm font-sans text-sm font-light leading-relaxed text-mocha">
+            <p className="mt-6 max-w-md font-sans text-base font-light leading-relaxed text-cream/85">
               Modest. Sophisticated. Effortlessly you.
             </p>
             <a
               href="#new-arrivals"
-              className="mt-9 inline-block bg-tan px-10 py-4 text-[0.72rem] font-sans uppercase tracking-widest2 text-cream transition-colors hover:bg-mocha"
+              className="mt-9 inline-block bg-cream px-10 py-4 text-[0.72rem] font-sans uppercase tracking-widest2 text-espresso transition-colors hover:bg-white"
             >
               Shop New In
             </a>

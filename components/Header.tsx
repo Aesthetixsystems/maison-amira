@@ -16,17 +16,10 @@ const navLinks = [
   "Accessories",
 ];
 
-// `overlay` renders the header transparently over the hero image (as in the
-// desktop mockup); otherwise it's a solid sticky bar.
-export default function Header({ overlay = false }: { overlay?: boolean }) {
+// Solid white, sticky header.
+export default function Header() {
   return (
-    <header
-      className={
-        overlay
-          ? "relative z-30 w-full bg-transparent"
-          : "sticky top-0 z-40 border-b border-beige bg-cream/95 backdrop-blur"
-      }
-    >
+    <header className="sticky top-0 z-40 border-b border-beige bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 text-cocoa sm:px-8">
         {/* Left — hamburger (mobile) / nav links (desktop) */}
         <div className="flex flex-1 items-center">
