@@ -1,0 +1,1 @@
+- [Next.js to Vite migration](nextjs-to-vite-migration.md) — next/image fill→absolute img, copy script misses flat app/ layout, strip unused App.tsx scaffolding

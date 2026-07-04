@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Maison Amira"
+version = "1.0.0"
+id = "artifacts/maison-amira"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19503
+
+[services.development]
+run = "pnpm --filter @workspace/maison-amira run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/maison-amira", "run", "build" ]
+publicDir = "artifacts/maison-amira/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19503"
+BASE_PATH = "/"
