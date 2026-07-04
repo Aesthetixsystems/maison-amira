@@ -3,7 +3,7 @@ import TrustBadges from "./TrustBadges";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[calc(100svh-6.5rem)] flex-col overflow-hidden">
+    <section className="relative flex min-h-[calc(100svh-6.5rem)] flex-col overflow-hidden lg:min-h-[calc(100svh-8.5rem)]">
       {/* Campaign image — replace /public/hero.jpg to swap the banner */}
       <Image
         src="/hero.jpg"
@@ -11,7 +11,7 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[68%_center] sm:object-[60%_center] lg:object-center"
+        className="object-cover object-[62%_top] sm:object-[center_top]"
       />
 
       {/* Editorial scrim: rich warm shadow on the left for the copy,
