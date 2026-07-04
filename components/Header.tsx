@@ -7,14 +7,7 @@ import {
   UserIcon,
 } from "./icons";
 
-const navLinks = [
-  "New In",
-  "Abayas",
-  "Kaftans",
-  "Sets",
-  "Evening Wear",
-  "Accessories",
-];
+const navLinks = ["New In", "Abayas", "Kaftans", "Sets", "Evening Wear"];
 
 // Solid white, sticky header.
 export default function Header() {

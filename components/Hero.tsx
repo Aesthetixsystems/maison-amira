@@ -21,7 +21,7 @@ export default function Hero() {
 
       {/* Hero copy */}
       <div className="relative z-10 flex flex-1 items-center">
-        <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
+        <div className="w-full px-6 sm:px-12 lg:px-20">
           <div className="max-w-xl">
             <p className="text-[0.72rem] font-sans uppercase tracking-widest2 text-goldsoft">
               New Collection

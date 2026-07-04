@@ -74,11 +74,6 @@ export const categories: {
     image:
       "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=400&q=80",
   },
-  {
-    name: "Accessories",
-    image:
-      "https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=400&q=80",
-  },
 ];
 
 export function formatPrice(value: number): string {

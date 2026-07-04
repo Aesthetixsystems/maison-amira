@@ -3,7 +3,7 @@ import { Ornament } from "./icons";
 const columns = [
   {
     title: "Shop",
-    links: ["Abayas", "Kaftans", "Evening Wear", "Sets", "Accessories"],
+    links: ["Abayas", "Kaftans", "Evening Wear", "Sets"],
   },
   {
     title: "Help",
