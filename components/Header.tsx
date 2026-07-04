@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   BagIcon,
   HeartIcon,
@@ -36,7 +37,10 @@ export default function Header() {
         </div>
 
         {/* Center — wordmark, dead-centre */}
-        <div className="flex flex-col items-center justify-self-center leading-none">
+        <Link
+          href="/"
+          className="flex flex-col items-center justify-self-center leading-none"
+        >
           <Ornament className="mb-1 h-3 w-10 text-goldsoft" />
           <span className="font-serif text-xl font-semibold tracking-[0.2em] text-cocoa sm:text-3xl">
             MAISON AMIRA
@@ -44,7 +48,7 @@ export default function Header() {
           <span className="mt-1.5 text-[0.55rem] font-sans uppercase tracking-widest2 text-gold sm:text-[0.62rem]">
             Timeless Modesty
           </span>
-        </div>
+        </Link>
 
         {/* Right — actions, pinned hard-right */}
         <div className="flex items-center justify-self-end gap-3.5 sm:gap-5">

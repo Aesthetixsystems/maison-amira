@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import TrustBadges from "./TrustBadges";
 
 export default function Hero() {
@@ -44,12 +45,12 @@ export default function Hero() {
             <p className="mt-6 max-w-md font-sans text-base font-light leading-relaxed text-cream/85">
               Modest. Sophisticated. Effortlessly you.
             </p>
-            <a
-              href="#new-arrivals"
+            <Link
+              href="/products/zaria-kaftan"
               className="mt-9 inline-block bg-cream px-10 py-4 text-[0.72rem] font-sans uppercase tracking-widest2 text-espresso transition-colors hover:bg-white"
             >
-              Shop New In
-            </a>
+              Shop the Look
+            </Link>
           </div>
         </div>
       </div>
