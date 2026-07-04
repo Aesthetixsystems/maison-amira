@@ -20,21 +20,21 @@ const navLinks = [
 export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-beige bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 text-cocoa sm:px-8">
-        {/* Left — hamburger (mobile) / nav links (desktop) */}
-        <div className="flex flex-1 items-center">
+      <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-4 py-4 text-cocoa sm:px-8">
+        {/* Left — hamburger (mobile) / nav links (desktop), pinned hard-left */}
+        <div className="flex items-center justify-self-start">
           <button
             aria-label="Open menu"
             className="p-1 transition-colors hover:text-tan lg:hidden"
           >
             <MenuIcon className="h-6 w-6" />
           </button>
-          <nav className="hidden items-center gap-x-6 lg:flex xl:gap-x-8">
+          <nav className="hidden items-center gap-x-5 lg:flex xl:gap-x-7">
             {navLinks.map((link) => (
               <a
                 key={link}
                 href="#"
-                className="whitespace-nowrap font-sans text-[0.7rem] uppercase tracking-widest transition-colors hover:text-tan"
+                className="whitespace-nowrap font-sans text-[0.68rem] uppercase tracking-widest transition-colors hover:text-tan xl:text-[0.72rem]"
               >
                 {link}
               </a>
@@ -42,8 +42,8 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* Center — wordmark */}
-        <div className="flex flex-col items-center leading-none">
+        {/* Center — wordmark, dead-centre */}
+        <div className="flex flex-col items-center justify-self-center leading-none">
           <Ornament className="mb-1 h-3 w-10 text-goldsoft" />
           <span className="font-serif text-xl font-semibold tracking-[0.2em] text-cocoa sm:text-3xl">
             MAISON AMIRA
@@ -53,8 +53,8 @@ export default function Header() {
           </span>
         </div>
 
-        {/* Right — actions */}
-        <div className="flex flex-1 items-center justify-end gap-3.5 sm:gap-5">
+        {/* Right — actions, pinned hard-right */}
+        <div className="flex items-center justify-self-end gap-3.5 sm:gap-5">
           <button aria-label="Search" className="p-1 transition-colors hover:text-tan">
             <SearchIcon className="h-[1.35rem] w-[1.35rem]" />
           </button>
