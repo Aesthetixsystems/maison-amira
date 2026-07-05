@@ -4,20 +4,44 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { formatPrice } from "@/lib/products";
-import type { CatalogProduct } from "@/lib/catalog";
+import { DEFAULT_SIZES, type CatalogProduct } from "@/lib/catalog";
+import { useCart } from "@/context/CartContext";
 import { HeartIcon } from "./icons";
 
 export default function ProductDetail({ product }: { product: CatalogProduct }) {
+  const { add } = useCart();
   const [variantIdx, setVariantIdx] = useState(0);
   const [imageIdx, setImageIdx] = useState(0);
+  const [size, setSize] = useState<string | null>(null);
+  const [sizeError, setSizeError] = useState(false);
+  const [added, setAdded] = useState(false);
 
   const variant = product.variants[variantIdx];
   const images = variant.images;
   const mainImage = images[Math.min(imageIdx, images.length - 1)];
+  const sizes = product.sizes ?? DEFAULT_SIZES;
 
   function selectVariant(i: number) {
     setVariantIdx(i);
     setImageIdx(0);
+  }
+
+  function handleAdd() {
+    if (!size) {
+      setSizeError(true);
+      return;
+    }
+    add({
+      slug: product.slug,
+      name: product.name,
+      variantId: variant.id,
+      variantName: variant.name,
+      size,
+      price: product.price,
+      image: variant.images[0],
+    });
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2000);
   }
 
   return (
@@ -110,13 +134,53 @@ export default function ProductDetail({ product }: { product: CatalogProduct }) 
               </div>
             </div>
 
+            {/* Size selector */}
+            <div className="mt-7">
+              <div className="flex items-baseline justify-between">
+                <p className="font-sans text-[0.7rem] uppercase tracking-widest text-mocha">
+                  Size {size && <span className="text-cocoa">— {size}</span>}
+                </p>
+                <button
+                  type="button"
+                  className="font-sans text-[0.65rem] uppercase tracking-widest text-tan underline-offset-2 hover:underline"
+                >
+                  Size Guide
+                </button>
+              </div>
+              <div className="mt-3 flex flex-wrap gap-2.5">
+                {sizes.map((s) => (
+                  <button
+                    key={s}
+                    type="button"
+                    onClick={() => {
+                      setSize(s);
+                      setSizeError(false);
+                    }}
+                    className={`h-11 min-w-[3rem] cursor-pointer border px-3 font-sans text-sm transition-colors ${
+                      size === s
+                        ? "border-tan bg-tan text-cream"
+                        : "border-beige text-cocoa hover:border-taupe"
+                    }`}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+              {sizeError && (
+                <p className="mt-2 font-sans text-xs text-tan">
+                  Please select a size.
+                </p>
+              )}
+            </div>
+
             {/* Actions */}
             <div className="mt-8 flex items-center gap-3">
               <button
                 type="button"
+                onClick={handleAdd}
                 className="flex-1 cursor-pointer bg-tan px-8 py-4 text-[0.72rem] font-sans uppercase tracking-widest2 text-cream transition-colors hover:bg-mocha"
               >
-                Add to Bag
+                {added ? "Added to Bag ✓" : "Add to Bag"}
               </button>
               <button
                 type="button"

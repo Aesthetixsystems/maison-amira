@@ -1,6 +1,6 @@
 import Link from "next/link";
+import BagButton from "./BagButton";
 import {
-  BagIcon,
   HeartIcon,
   MenuIcon,
   Ornament,
@@ -67,20 +67,7 @@ export default function Header() {
           >
             <HeartIcon className="h-[1.35rem] w-[1.35rem]" />
           </button>
-          <button
-            aria-label="Shopping bag"
-            className="flex items-center gap-2 p-1 transition-colors hover:text-tan"
-          >
-            <span className="relative">
-              <BagIcon className="h-[1.35rem] w-[1.35rem]" />
-              <span className="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-tan text-[0.6rem] font-medium text-cream lg:hidden">
-                0
-              </span>
-            </span>
-            <span className="hidden font-sans text-[0.7rem] uppercase tracking-widest lg:inline">
-              Bag (0)
-            </span>
-          </button>
+          <BagButton />
         </div>
       </div>
     </header>

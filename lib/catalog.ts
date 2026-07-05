@@ -22,7 +22,11 @@ export type CatalogProduct = {
   description: string;
   details: string[];
   variants: Variant[];
+  sizes?: string[]; // falls back to DEFAULT_SIZES
 };
+
+// Standard size run for the store.
+export const DEFAULT_SIZES = ["S", "M", "L", "XL", "XXL"];
 
 export const catalog: CatalogProduct[] = [
   {
