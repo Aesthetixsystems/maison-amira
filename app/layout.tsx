@@ -29,8 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
-      <body className="font-sans">
+    <html
+      lang="en"
+      className={`${cormorant.variable} ${jost.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="font-sans" suppressHydrationWarning>
         <CartProvider>{children}</CartProvider>
       </body>
     </html>
